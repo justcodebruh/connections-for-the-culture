@@ -24,6 +24,11 @@
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .category-content h3 {
@@ -31,6 +36,8 @@
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
   }
 
   .category-content p {
@@ -38,6 +45,9 @@
     font-size: 14px;
     opacity: 0.95;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-primary);
   }
 
   @keyframes categoryPop {

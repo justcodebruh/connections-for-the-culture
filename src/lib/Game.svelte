@@ -8,13 +8,13 @@
   import GameOverModal from './GameOverModal.svelte'
   import type { Category, GameState } from './types'
 
-  // Sample puzzle - replace with actual data
+  // Christmas Culture Puzzle
   const puzzle = {
     categories: [
-      { name: 'Hip-Hop Icons', color: '#b392f0', words: ['JAY-Z', 'BIGGIE', 'TUPAC', 'EMINEM'] },
-      { name: 'Social Movements', color: '#4a90e2', words: ['BLM', 'WOKE', 'ACTIVISM', 'JUSTICE'] },
-      { name: 'Black Culture', color: '#3aa655', words: ['SOUL', 'JAZZ', 'SOULMATES', 'HERITAGE'] },
-      { name: 'Young Slang', color: '#f4d35e', words: ['LIT', 'NO CAP', 'FACTS', 'SLAY'] }
+      { name: 'Rappers named after brands/products', color: '#f4d35e', words: ['GUCCI MANE', 'POLO G', 'CARDI B', '2 CHAINZ'] },
+      { name: 'Wrapping papers', color: '#3aa655', words: ['SWISHERS', 'DUTCHES', 'ZIG ZAGS', 'RAW'] },
+      { name: 'Sung by Beyoncé', color: '#4a90e2', words: ['HEAVEN', 'AVE MARIA', 'HALO', 'SPIRIT'] },
+      { name: 'Nouns that move white girl(s)', color: '#b392f0', words: ['PUSHA T', 'JEEZY', 'VOLKSWAGEN BEETLE', 'ESPRESSO'] }
     ]
   }
 
@@ -247,6 +247,10 @@
   main {
     width: 100%;
     max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .game-board {
@@ -254,6 +258,7 @@
     flex-direction: column;
     gap: 12px;
     position: relative;
+    width: 100%;
   }
 
   .feedback-message {

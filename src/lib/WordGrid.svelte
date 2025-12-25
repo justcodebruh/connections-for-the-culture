@@ -36,9 +36,12 @@
   .word-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 8px;
     margin-bottom: 12px;
     transition: transform 50ms ease-out;
+    width: 100%;
+    aspect-ratio: 4 / 4;
   }
 
   .word-grid.shake {
@@ -46,12 +49,10 @@
   }
 
   .word-button {
-    padding: 16px 12px;
     background-color: var(--color-gray);
     border: 2px solid transparent;
     border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 150ms ease-out;
     text-transform: uppercase;
@@ -59,10 +60,16 @@
     color: var(--color-text-primary);
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: clamp(9px, 1.8vw, 12px);
+    padding: 8px;
+    text-align: center;
+    overflow: hidden;
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 1.2;
   }
 
   .word-button:active:not(:disabled) {
@@ -97,9 +104,7 @@
     }
 
     .word-button {
-      padding: 18px 14px;
-      font-size: 15px;
-      min-height: 48px;
+      font-size: clamp(11px, 2vw, 13px);
     }
   }
 
@@ -110,9 +115,7 @@
     }
 
     .word-button {
-      padding: 20px 16px;
-      font-size: 16px;
-      min-height: 52px;
+      font-size: clamp(12px, 1.8vw, 14px);
     }
   }
 </style>
