@@ -1,0 +1,239 @@
+/* Tile Selection Animation */
+@keyframes selectTile {
+  from {
+    transform: scale(1);
+    background-color: var(--color-gray);
+    color: var(--color-text-primary);
+  }
+  to {
+    transform: scale(0.95);
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+}
+
+/* Tile Deselection Animation */
+@keyframes deselectTile {
+  from {
+    transform: scale(0.95);
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+  to {
+    transform: scale(1);
+    background-color: var(--color-gray);
+    color: var(--color-text-primary);
+  }
+}
+
+/* Solved Category Pop-In (Spring Effect) */
+@keyframes categoryPop {
+  0% {
+    transform: scale(0.8) translateY(-20px);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Tile Fade Out (when category solved) */
+@keyframes tilesFadeOut {
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Grid Shake (incorrect guess) */
+@keyframes gridShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+/* Tile Flash (category color on wrong guess) */
+@keyframes tileFlash {
+  0%, 100% {
+    background-color: inherit;
+  }
+  50% {
+    background-color: var(--color-yellow);
+  }
+}
+
+/* Shuffle Fade */
+@keyframes shuffleFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes shuffleFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Word Remove Animation */
+@keyframes wordRemove {
+  to {
+    transform: scale(0.8) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+/* Word Enter Animation */
+@keyframes wordEnter {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Modal Entrance */
+@keyframes modalSlideIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Modal Backdrop Fade */
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse (optional category bar highlight) */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Message Fade In/Out */
+@keyframes messageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes messageFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Staggered tile entrance */
+@keyframes tileStagger {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility animation classes */
+.animate-select {
+  animation: selectTile 150ms ease-out forwards;
+}
+
+.animate-deselect {
+  animation: deselectTile 150ms ease-out forwards;
+}
+
+.animate-category-pop {
+  animation: categoryPop 400ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-grid-shake {
+  animation: gridShake 400ms ease-in-out forwards;
+}
+
+.animate-tile-flash {
+  animation: tileFlash 200ms ease-in-out forwards;
+}
+
+.animate-shuffle-fade-out {
+  animation: shuffleFadeOut 100ms ease-in forwards;
+}
+
+.animate-shuffle-fade-in {
+  animation: shuffleFadeIn 100ms ease-out forwards;
+}
+
+.animate-word-remove {
+  animation: wordRemove 300ms ease-in forwards;
+}
+
+.animate-modal-in {
+  animation: modalSlideIn 500ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-backdrop-in {
+  animation: backdropFadeIn 300ms ease-out forwards;
+}
+
+.animate-message {
+  animation: messageFadeIn 300ms ease-out forwards;
+}
+
+.animate-message-out {
+  animation: messageFadeOut 300ms ease-out forwards;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

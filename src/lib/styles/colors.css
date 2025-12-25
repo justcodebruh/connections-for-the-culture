@@ -1,0 +1,34 @@
+/* NYT Connections Official Color Palette */
+:root {
+  /* Difficulty tier colors */
+  --color-yellow: #f4d35e;
+  --color-green: #3aa655;
+  --color-blue: #4a90e2;
+  --color-purple: #b392f0;
+  
+  /* Neutral colors */
+  --color-gray: #d3d3d3;
+  --color-dark: #333333;
+  --color-white: #ffffff;
+  --color-light-bg: #f5f5f5;
+  
+  /* Semantic colors */
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-border: #e0e0e0;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Overlay */
+  --color-overlay: rgba(0, 0, 0, 0.5);
+}
+
+/* Dark mode support (nice-to-have) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-light-bg: #1a1a1a;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #b0b0b0;
+    --color-gray: #4a4a4a;
+    --color-border: #333333;
+  }
+}
