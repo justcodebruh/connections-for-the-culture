@@ -5,6 +5,7 @@
   export let won: boolean = false
   export let solvedCategories: Category[] = []
   export let unsolvedCategories: Category[] = []
+  export let onDismiss: () => void = () => {}
   export let onPlayAgain: () => void = () => {}
 
   function generateShareText(): string {
@@ -63,15 +64,18 @@
 
       {#if won}
         <div class="modal-actions">
+          <button class="modal-button modal-button--primary" on:click={onDismiss}>
+            Look at your puzzle
+          </button>
           <button class="modal-button modal-button--share" on:click={copyToClipboard}>
             Share Result
           </button>
         </div>
+      {:else}
+        <button class="modal-button modal-button--primary" on:click={onPlayAgain}>
+          Play Again
+        </button>
       {/if}
-
-      <button class="modal-button modal-button--primary" on:click={onPlayAgain}>
-        Play Again
-      </button>
     </div>
   </div>
 {/if}

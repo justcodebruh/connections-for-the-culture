@@ -33,6 +33,27 @@
   let shakeAnimation = false
   let feedbackMessage = ''
 
+  function saveGameState(): void {
+    localStorage.setItem('gameState', JSON.stringify({
+      allWords,
+      gameState,
+      puzzle
+    }))
+  }
+
+  function loadGameState(): void {
+    const saved = localStorage.getItem('gameState')
+    if (saved) {
+      try {
+        const data = JSON.parse(saved)
+        allWords = data.allWords
+        gameState = data.gameState
+      } catch (e) {
+        console.error('Failed to load game state:', e)
+      }
+    }
+  }
+
   function handleWordClick(word: string): void {
     if (gameState.selected.includes(word)) {
       gameState.selected = gameState.selected.filter(w => w !== word)
@@ -97,6 +118,7 @@
       if (gameState.solved.length === 4) {
         gameState.won = true
         gameState.gameOver = true
+        saveGameState()
       }
 
       setTimeout(() => {
@@ -136,6 +158,10 @@
     }
   }
 
+  function handleDismissModal(): void {
+    gameState.gameOver = false
+  }
+
   function handleReset(): void {
     allWords = shuffleArray(puzzle.categories.flatMap(cat => cat.words))
     gameState = {
@@ -148,6 +174,7 @@
     }
     isAnimating = false
     feedbackMessage = ''
+    localStorage.removeItem('gameState')
   }
 
   $: unsolvedCategories = puzzle.categories.filter(
@@ -206,6 +233,7 @@
           won={gameState.won}
           solvedCategories={gameState.solved}
           unsolvedCategories={unsolvedCategories}
+          onDismiss={handleDismissModal}
           onPlayAgain={handleReset}
         />
       {/if}
