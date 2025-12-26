@@ -8,13 +8,13 @@
   import GameOverModal from './GameOverModal.svelte'
   import type { Category, GameState } from './types'
 
-  // Christmas Culture Puzzle
+  // Post-Christmas Culture Puzzle
   const puzzle = {
     categories: [
-      { name: 'Rappers named after brands/products', color: '#f4d35e', words: ['GUCCI MANE', 'POLO G', 'CARDI B', '2 CHAINZ'] },
-      { name: 'Wrapping papers', color: '#3aa655', words: ['SWISHERS', 'DUTCHES', 'ZIG ZAGS', 'RAW'] },
-      { name: 'Sung by Beyoncé', color: '#4a90e2', words: ['HEAVEN', 'AVE MARIA', 'HALO', 'SPIRIT'] },
-      { name: 'Nouns that move white girl(s)', color: '#b392f0', words: ['PUSHA T', 'JEEZY', 'VOLKSWAGEN BEETLE', 'ESPRESSO'] }
+      { name: 'New Year New Me', color: '#f4d35e', words: ['DETOX', 'LOCK IN', 'GRIND', 'GLOW UP'] },
+      { name: 'Artists associated with weather', color: '#3aa655', words: ['CHRIS BREEZY', 'HURRICANE CHRIS', 'HOT GIRL', 'SUMMER WALKER'] },
+      { name: 'Get my body right', color: '#4a90e2', words: ['WEIGHT', 'PRESS', 'GYM', 'CARDIO'] },
+      { name: 'Corporate bullshit', color: '#b392f0', words: ['FAMILY', 'EMAIL', 'QUARTER', 'OFFSITE'] }
     ]
   }
 
